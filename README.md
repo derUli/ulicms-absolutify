@@ -4,7 +4,7 @@ Prepends a base url to relative links in html code
 
 ## Requirements
 
-absolutify is compatible with UliCMS 2018.3 or later.
+**absolutify** is compatible with UliCMS 2018.3 or later.
 
 ## Usage
 
@@ -16,6 +16,7 @@ absolutify($html, $baseUrl = null)`
 
 * `$html` is a html input string.
 * `$baseUrl` is a base url including protocol and domain.
+
 if `$baseUrl` is null the base url is determined with `ModuleHelper::getBaseUrl()`.
 
 ```php
