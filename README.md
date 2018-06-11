@@ -16,7 +16,6 @@ absolutify($html, $baseUrl = null)`
 
 * `$html` is a html input string.
 * `$baseUrl` is a base url including protocol and domain.
-
 if `$baseUrl` is null the base url is determined with `ModuleHelper::getBaseUrl()`.
 
 ```php
