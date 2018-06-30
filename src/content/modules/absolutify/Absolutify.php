@@ -8,7 +8,7 @@ function absolutify($html, $baseUrl = null)
     $baseUrl = rtrim($baseUrl, '/');
     
     $html = trim($html);
-        
+    // this is required to prevent DOMDocument from fucking up the encoding
 	$html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8');
 	
     // Create a new DOM document
@@ -17,7 +17,7 @@ function absolutify($html, $baseUrl = null)
     // Parse the HTML. The @ is used to suppress any parsing errors
     // that will be thrown if the $html string isn't valid XHTML.
     @$dom->loadHTML($html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-    $dom->substituteEntities = TRUE;
+    $dom->substituteEntities = true;
 
     $links = $dom->getElementsByTagName('a');
     
