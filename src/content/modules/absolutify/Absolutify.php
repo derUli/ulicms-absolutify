@@ -8,14 +8,17 @@ function absolutify($html, $baseUrl = null)
     $baseUrl = rtrim($baseUrl, '/');
     
     $html = trim($html);
-    
+        
+	$html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8');
+	
     // Create a new DOM document
-    $dom = new DOMDocument();
+    $dom = new DOMDocument('1.0', 'utf-8');
     
     // Parse the HTML. The @ is used to suppress any parsing errors
     // that will be thrown if the $html string isn't valid XHTML.
     @$dom->loadHTML($html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-    
+    $dom->substituteEntities = TRUE;
+
     $links = $dom->getElementsByTagName('a');
     
     foreach ($links as $link) {

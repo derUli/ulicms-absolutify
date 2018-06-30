@@ -1,6 +1,6 @@
 {
 	"id": "absolutify",
-	"version": "1.0",
+	"version": "1.1",
 	"description": "Prepends a base url to relative links in html code",
 	"categories": [],
 	"compatible_from": "2018.3"
