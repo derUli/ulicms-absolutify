@@ -4,7 +4,8 @@ Prepends a base url to relative links in html code.
 
 ## Requirements
 
-**absolutify** is compatible with UliCMS 2018.3 or later.
+* UliCMS 2018.3 or later
+* libxml2 version 2.7.8 or later
 
 ## Usage
 
